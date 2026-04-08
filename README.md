@@ -81,22 +81,29 @@ This generates a Google Sheet template, walks you through filling it out, and cr
 
 ---
 
-## Tool list format
+## Tool list
 
-A CSV with seven columns: `Group`, `Tool`, `Plan`, `Notes`, `Highly Confidential`, `Confidential`, `NonConfidential`
+Your tool list lives in a Google Sheet (or a local CSV file). Each row is one AI tool. Each column answers a question:
 
-```csv
-Group,Tool,Plan,Notes,Highly Confidential,Confidential,NonConfidential
-Microsoft 365,Microsoft 365 Copilot,Enterprise,Work email only,n,y,y
-Google Workspace,Gemini + NotebookLM,Enterprise,Work email only,n,y,y
-_meta,hc_label,,LP identities · cap tables · fund financials · sensitive PII,,,
-_meta,conf_label,,Board decks · deal memos · NDA pitch decks · portfolio financials,,,
-_meta,nc_label,,Public filings · market research · no-NDA decks,,,
-```
+| Column | What to put here |
+|--------|-----------------|
+| **Group** | Category heading, e.g. "Microsoft 365", "Meeting AI" |
+| **Tool** | Tool name as it should appear in the policy doc |
+| **Plan** | Enterprise / Pro / Team / Business / Blocked / — |
+| **Notes** | Anything worth knowing — shown in the doc and used by the advisor for Q&A |
+| **Highly Confidential** | y / n — can this tool be used with highly confidential data? |
+| **Confidential** | y / n |
+| **NonConfidential** | y / n |
 
-The `_meta` rows define your classification tier labels. The advisor reads these to understand your firm's specific definitions — update them in the CSV and the advisor updates automatically.
+Three special `_meta` rows define what belongs in each data tier. The advisor reads these — so if your firm adds "investor decks with financial projections" to Confidential, the advisor automatically knows to ask about it.
 
-Run `/ai-policy reset` to get a pre-filled template you can import or edit directly.
+| Group | Tool | Notes |
+|-------|------|-------|
+| _meta | hc_label | LP identities · cap tables · fund financials · sensitive PII |
+| _meta | conf_label | Board decks · deal memos · NDA pitch decks · portfolio financials |
+| _meta | nc_label | Public filings · market research · no-NDA decks |
+
+Run `/ai-policy reset` to get a pre-filled template ready to import into Google Sheets.
 
 ---
 
@@ -107,9 +114,5 @@ Run `/ai-policy reset` to get a pre-filled template you can import or edit direc
 ```yaml
 firm_name: Your Firm
 sheet_url: https://docs.google.com/spreadsheets/d/e/...  # Google Sheets published CSV URL
-# sheet_url: /path/to/tools.csv                          # or a local CSV file
+# sheet_url: /path/to/tools.csv                          # or a local CSV file path
 ```
-
-`sheet_url` accepts:
-- A **Google Sheets** published CSV URL (recommended — live sync, change detection built in)
-- A **local CSV file** path — works with Excel (Save As CSV) or Notion (Export → CSV)
