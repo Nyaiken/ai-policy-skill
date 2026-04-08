@@ -46,7 +46,7 @@ Your Sheet defines what goes in each tier via `_meta` rows — so if your firm a
 ## Install
 
 ```bash
-git clone https://github.com/Nyaiken/ai-policy ~/.claude/skills/ai-policy
+git clone https://github.com/Nyaiken/ai-policy-skill ~/.claude/skills/ai-policy
 cd ~/.claude/skills/ai-policy
 npm install
 ```
