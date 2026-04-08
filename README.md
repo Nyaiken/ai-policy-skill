@@ -1,18 +1,18 @@
 # ai-policy — Claude Code Skill
 
-> Built for small VC and PE firms. If your team regularly handles board decks, LP data, deal memos, and NDA-bound materials — and you want a clear, enforceable answer to "can I put this in ChatGPT?" — this is for you.
+> Built for small VC and PE firms. If your team regularly handles board decks, LP data, deal memos, and NDA-bound materials — and you want a clear answer grounded in your company's actual approved tools — this is for you.
 
-Ask a question, get a named tool and a clear yes/no. No policy binders, no guessing.
+Ask a question, get a named tool and a clear yes/no. Answers reflect your firm's real-time tool policy, not generic advice.
 
 ```
 /ai-policy can I use ChatGPT for this pitch deck?
 ```
 ```
-❌ No. Pitch decks shared under NDA are Confidential — use an approved tool
-   (M365 Copilot or Gemini for Workspace) logged in with your company email.
+❌ No. Pitch decks shared under NDA are Confidential — ChatGPT is not on the
+   approved list. Use Claude Enterprise logged in with your company email.
 
 What to do instead:
-• Use M365 Copilot (company email) to summarize or extract key points
+• Use Claude Enterprise (company email) to summarize or extract key points
 • If it's a no-NDA deck, any reputable tool is fine for public-info research
 • Ask the MP if you're unsure whether an NDA was signed
 ```
