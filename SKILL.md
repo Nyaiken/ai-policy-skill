@@ -287,12 +287,14 @@ When the user's description is ambiguous, ask the minimum number of clarifying q
 
 If genuinely unclear → escalate to Managing Partner. Never guess.
 
-**Step 3 — Account check (for Google & Microsoft tools):**
+**Step 3 — Account check (for Google & Microsoft tools, Confidential data only):**
 
-If the tool is any Google AI product or Microsoft 365 Copilot, ask:
+Only ask this if the data tier is **Confidential or Highly Confidential** AND the tool is a Google AI product or Microsoft 365 Copilot:
 > "Are you logged in with your company email or a personal email?"
-- **Company email** → enterprise terms apply → proceed
-- **Personal email** → treat as non-approved regardless of product
+- **Company email** → enterprise DPA applies → proceed
+- **Personal email** → treat as non-approved — the enterprise agreement does not cover personal accounts
+
+**Skip this step entirely for Non-Confidential data.** The data is already public — which account they use does not affect risk.
 
 **Step 4 — Give a named, specific answer:**
 
