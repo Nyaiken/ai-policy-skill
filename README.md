@@ -17,13 +17,13 @@ What to do instead:
 • Ask the MP if you're unsure whether an NDA was signed
 ```
 
-When the policy changes, update the Google Sheet. Everyone's advisor updates automatically.
+When the policy changes, update your tool list. Everyone's advisor updates automatically.
 
 ---
 
 ## How it works
 
-Your firm's tool list and data classification rules live in a Google Sheet — not in code. The advisor fetches it, reasons from it, and gives grounded answers. No redeploys, no policy binders.
+Your firm's tool list and data classification rules live in a CSV — not in code. The advisor reads it, reasons from it, and gives grounded answers. No redeploys, no policy binders.
 
 **Three modes:**
 
@@ -81,19 +81,22 @@ This generates a Google Sheet template, walks you through filling it out, and cr
 
 ---
 
-## Google Sheet format
+## Tool list format
 
-Seven columns: `Group`, `Tool`, `Plan`, `Notes`, `Highly Confidential`, `Confidential`, `NonConfidential`
+A CSV with seven columns: `Group`, `Tool`, `Plan`, `Notes`, `Highly Confidential`, `Confidential`, `NonConfidential`
 
-| Group | Tool | Plan | Notes | Highly Confidential | Confidential | NonConfidential |
-|-------|------|------|-------|:-------------------:|:------------:|:---------------:|
-| Microsoft 365 | Microsoft 365 Copilot | Enterprise | Work email only | n | y | y |
-| Google Workspace | Gemini + NotebookLM | Enterprise | Work email only | n | y | y |
-| _meta | hc_label | | LP identities · cap tables · fund financials · sensitive PII | | | |
-| _meta | conf_label | | Board decks · deal memos · NDA pitch decks · portfolio financials | | | |
-| _meta | nc_label | | Public filings · market research · no-NDA decks | | | |
+```csv
+Group,Tool,Plan,Notes,Highly Confidential,Confidential,NonConfidential
+Microsoft 365,Microsoft 365 Copilot,Enterprise,Work email only,n,y,y
+Google Workspace,Gemini + NotebookLM,Enterprise,Work email only,n,y,y
+_meta,hc_label,,LP identities · cap tables · fund financials · sensitive PII,,,
+_meta,conf_label,,Board decks · deal memos · NDA pitch decks · portfolio financials,,,
+_meta,nc_label,,Public filings · market research · no-NDA decks,,,
+```
 
-The `_meta` rows define your classification tier labels. The advisor reads these to understand your firm's specific definitions — so if your tier boundaries shift, just update the Sheet.
+The `_meta` rows define your classification tier labels. The advisor reads these to understand your firm's specific definitions — update them in the CSV and the advisor updates automatically.
+
+Run `/ai-policy reset` to get a pre-filled template you can import or edit directly.
 
 ---
 
@@ -103,5 +106,10 @@ The `_meta` rows define your classification tier labels. The advisor reads these
 
 ```yaml
 firm_name: Your Firm
-sheet_url: https://docs.google.com/spreadsheets/d/e/...
+sheet_url: https://docs.google.com/spreadsheets/d/e/...  # Google Sheets published CSV URL
+# sheet_url: /path/to/tools.csv                          # or a local CSV file
 ```
+
+`sheet_url` accepts:
+- A **Google Sheets** published CSV URL (recommended — live sync, change detection built in)
+- A **local CSV file** path — works with Excel (Save As CSV) or Notion (Export → CSV)
