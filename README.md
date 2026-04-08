@@ -1,4 +1,4 @@
-# ai-policy — Claude Code Skill
+# ai-policy
 
 > Built for small VC and PE firms. If your team regularly handles board decks, LP data, deal memos, and NDA-bound materials — and you want a clear answer grounded in your company's actual approved tools — this is for you.
 
@@ -76,7 +76,7 @@ This generates a Google Sheet template, walks you through filling it out, and cr
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/code)
+- [Claude Code](https://claude.ai/code) or [OpenClaw](https://openclaw.ai)
 - Node.js (for PDF generation via `npm install`)
 
 ---
