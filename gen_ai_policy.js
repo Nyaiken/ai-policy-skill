@@ -355,7 +355,8 @@ function buildHTML({ tools, meta }) {
       <div class="rule-label">Accountability</div>
       <ul>
         <li>All AI output must be reviewed by a human before sharing externally.</li>
-        <li>Use your company-provided account for Confidential or Highly Confidential data — personal accounts are not covered by enterprise agreements.</li>
+        <li>Always use your company email account when accessing approved AI tools.</li>
+        <li>Portfolio company agreements may restrict third-party data processing — check with HQ compliance before using approved AI tools with portco data if you are unsure whether their agreements permit it.</li>
         <li>AI-generated analysis must be independently verified before informing investment decisions.</li>
         <li>Users are accountable for all AI-assisted work; misuse may result in access revocation.</li>
         <li>AI tools may reflect bias — apply your own judgment always.</li>
