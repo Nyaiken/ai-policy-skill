@@ -287,9 +287,6 @@ When the user's description is ambiguous, ask the minimum number of clarifying q
 
 If genuinely unclear → escalate to Managing Partner. Never guess.
 
-**Portco data special rule:** Even if a tool is approved for Confidential data, portfolio company materials may be subject to additional restrictions under their agreements. If the user's question involves portco data (board materials, financials, due diligence), always add:
-> "⚠️ Note: Portfolio company agreements may restrict third-party data processing. Check with HQ compliance if you are unsure whether their agreements permit this."
-
 **Step 3 — Account check (for Google & Microsoft tools, Confidential data only):**
 
 Only ask this if the data tier is **Confidential or Highly Confidential** AND the tool is a Google AI product or Microsoft 365 Copilot:
